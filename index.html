@@ -1,10 +1,11 @@
+```html id="6x7nqv"
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Coming Soon</title>
+<title>ORBIT HUB — Coming Soon</title>
 
 <style>
 * {
@@ -21,8 +22,11 @@ body {
 
 body {
     overflow: hidden;
-    background: #01030b;
+
+    background: #02020a;
+
     color: #fff;
+
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -33,747 +37,658 @@ body {
 }
 
 /* =====================================================
-   SPACE
+   BACKGROUND
 ===================================================== */
 
 .space {
     position: fixed;
     inset: 0;
+
     overflow: hidden;
 
     background:
         radial-gradient(
-            circle at 50% 42%,
-            rgba(35, 65, 150, .18),
-            transparent 35%
+            circle at 50% 50%,
+            rgba(115,65,255,.12),
+            transparent 28%
         ),
         radial-gradient(
-            circle at 85% 15%,
-            rgba(100, 45, 190, .12),
+            circle at 20% 20%,
+            rgba(0,180,255,.08),
             transparent 30%
         ),
-        linear-gradient(
-            180deg,
-            #01030b 0%,
-            #020719 55%,
-            #01030b 100%
-        );
+        #02020a;
 }
 
-/* =====================================================
-   STARS
-===================================================== */
-
-.stars,
-.stars2,
-.stars3 {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-}
+/* Stars */
 
 .stars {
-    background-image:
-        radial-gradient(circle, #fff 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1.5px);
-
-    background-size:
-        170px 170px,
-        260px 260px;
-
-    background-position:
-        10px 20px,
-        100px 80px;
-
-    opacity: .65;
-}
-
-.stars2 {
-    background-image:
-        radial-gradient(circle, #fff 1.2px, transparent 2px),
-        radial-gradient(circle, rgba(100,180,255,.8) 1px, transparent 2px);
-
-    background-size:
-        330px 330px,
-        420px 420px;
-
-    background-position:
-        40px 120px,
-        200px 50px;
-
-    opacity: .45;
-}
-
-.stars3 {
-    background-image:
-        radial-gradient(circle, white 1.5px, transparent 2px);
-
-    background-size: 520px 520px;
-    background-position: 80px 200px;
-
-    opacity: .3;
-}
-
-/* =====================================================
-   NEBULA
-===================================================== */
-
-.nebula {
     position: absolute;
+    inset: 0;
 
-    width: 900px;
-    height: 600px;
-
-    left: 50%;
-    top: 10%;
-
-    transform: translateX(-50%);
-
-    background:
+    background-image:
         radial-gradient(
-            ellipse,
-            rgba(70, 100, 255, .14),
-            rgba(130, 50, 220, .06) 35%,
-            transparent 70%
+            circle,
+            rgba(255,255,255,.9) 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(130,180,255,.7) 1px,
+            transparent 1.5px
         );
 
-    filter: blur(45px);
+    background-size:
+        160px 160px,
+        300px 300px;
 
-    animation: nebulaMove 12s ease-in-out infinite alternate;
-}
+    background-position:
+        20px 20px,
+        100px 70px;
 
-@keyframes nebulaMove {
-    from {
-        transform: translateX(-50%) scale(1);
-    }
-
-    to {
-        transform: translateX(-50%) scale(1.12);
-    }
+    opacity: .55;
 }
 
 /* =====================================================
-   SUN
+   AMBIENT GLOW
 ===================================================== */
 
-.sun {
+.glow {
     position: absolute;
 
-    width: 125px;
-    height: 125px;
+    width: 650px;
+    height: 650px;
 
-    top: 10%;
-    right: 12%;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
-            circle at 35% 35%,
-            #fff,
-            #ffe77a 20%,
-            #ffb52e 55%,
-            #ff641f 75%,
-            transparent 76%
+            circle,
+            rgba(100,70,255,.12),
+            transparent 68%
         );
 
-    box-shadow:
-        0 0 30px #ffbd45,
-        0 0 80px rgba(255,170,40,.55),
-        0 0 160px rgba(255,110,30,.25);
-
-    animation: sunPulse 5s ease-in-out infinite;
-}
-
-@keyframes sunPulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.06);
-    }
+    filter: blur(25px);
 }
 
 /* =====================================================
-   PLANET
+   ORBITAL HUB
 ===================================================== */
 
-.planet-small {
+.hub {
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    left: 50%;
+    top: 48%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 5;
+}
+
+/* Central sphere */
+
+.core {
     position: absolute;
 
     width: 95px;
     height: 95px;
 
-    left: 9%;
-    top: 17%;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
-            circle at 30% 30%,
-            #c3d8ff,
-            #5272c9 35%,
-            #18275d 70%,
-            #050a20
+            circle at 32% 27%,
+            #fff,
+            #c4a9ff 12%,
+            #805cff 38%,
+            #3a188f 70%,
+            #10052e 100%
         );
 
     box-shadow:
-        inset -20px -15px 30px rgba(0,0,0,.6),
-        0 0 30px rgba(80,120,255,.25);
+        0 0 25px rgba(140,100,255,.8),
+        0 0 80px rgba(100,60,255,.35),
+        inset -15px -15px 25px rgba(0,0,0,.45);
 }
 
-.planet-small::after {
+/* Core pulse */
+
+.core::after {
     content: "";
 
     position: absolute;
 
-    width: 150px;
-    height: 38px;
+    inset: -15px;
 
-    left: -28px;
-    top: 30px;
-
-    border: 2px solid rgba(150,180,255,.35);
+    border:
+        1px solid
+        rgba(170,140,255,.3);
 
     border-radius: 50%;
 
-    transform: rotate(-18deg);
+    animation:
+        corePulse 3s ease-in-out infinite;
 }
 
-/* =====================================================
-   SATELLITE
-===================================================== */
-
-.satellite {
-    position: absolute;
-
-    width: 100px;
-    height: 70px;
-
-    right: 17%;
-    top: 34%;
-
-    transform: rotate(-12deg);
-
-    animation: satelliteFloat 8s ease-in-out infinite;
-}
-
-@keyframes satelliteFloat {
-    0%, 100% {
-        transform: translate(0,0) rotate(-12deg);
-    }
+@keyframes corePulse {
 
     50% {
-        transform: translate(-35px,18px) rotate(-5deg);
+        inset: -25px;
+
+        opacity: .3;
     }
 }
 
-.satellite-body {
-    position: absolute;
-
-    width: 42px;
-    height: 32px;
-
-    left: 29px;
-    top: 18px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #e5ebf5,
-            #68758b
-        );
-
-    border-radius: 4px;
-}
-
-.satellite-body::before {
-    content: "";
-
-    position: absolute;
-
-    width: 24px;
-    height: 24px;
-
-    right: -15px;
-    top: 4px;
-
-    border: 2px solid #cfd9e8;
-
-    border-radius: 50%;
-}
-
-.satellite-body::after {
-    content: "";
-
-    position: absolute;
-
-    width: 20px;
-    height: 2px;
-
-    right: -27px;
-    top: 15px;
-
-    background: #cfd9e8;
-
-    transform: rotate(-15deg);
-}
-
-.panel {
-    position: absolute;
-
-    width: 27px;
-    height: 42px;
-
-    top: 13px;
-
-    background:
-        repeating-linear-gradient(
-            90deg,
-            #172e68 0px,
-            #172e68 5px,
-            #5d82d4 6px,
-            #172e68 7px
-        );
-
-    border: 1px solid #809bd8;
-}
-
-.panel.left {
-    left: 0;
-}
-
-.panel.right {
-    right: 0;
-}
-
 /* =====================================================
-   ORBIT
+   ORBITS
 ===================================================== */
 
-.orbit {
+.ring {
     position: absolute;
-
-    width: 520px;
-    height: 170px;
 
     left: 50%;
     top: 50%;
 
     transform:
         translate(-50%, -50%)
-        rotate(-15deg);
-
-    border: 1px solid rgba(120,160,255,.12);
+        rotate(25deg);
 
     border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(150,120,255,.22);
 }
 
-.orbit-dot {
+.ring.one {
+    width: 250px;
+    height: 105px;
+
+    animation:
+        rotateOne 12s linear infinite;
+}
+
+.ring.two {
+    width: 310px;
+    height: 135px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-35deg);
+
+    border-color:
+        rgba(60,200,255,.14);
+
+    animation:
+        rotateTwo 17s linear infinite;
+}
+
+.ring.three {
+    width: 390px;
+    height: 165px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(65deg);
+
+    border-color:
+        rgba(180,100,255,.1);
+
+    animation:
+        rotateThree 23s linear infinite;
+}
+
+@keyframes rotateOne {
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(385deg);
+    }
+}
+
+@keyframes rotateTwo {
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(325deg);
+    }
+}
+
+@keyframes rotateThree {
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(425deg);
+    }
+}
+
+/* =====================================================
+   ORBITING NODES
+===================================================== */
+
+.node {
     position: absolute;
 
-    width: 8px;
-    height: 8px;
-
-    right: 8%;
-    top: 12%;
+    width: 9px;
+    height: 9px;
 
     border-radius: 50%;
 
-    background: #7ee7ff;
+    background: #67eaff;
 
     box-shadow:
-        0 0 15px #7ee7ff;
+        0 0 15px #67eaff;
+}
+
+.node.one {
+    left: 13px;
+    top: 78px;
+}
+
+.node.two {
+    right: 8px;
+    top: 115px;
+
+    background: #ae7aff;
+
+    box-shadow:
+        0 0 15px #ae7aff;
+}
+
+.node.three {
+    left: 70px;
+    bottom: 0;
+
+    width: 6px;
+    height: 6px;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 12px #fff;
 }
 
 /* =====================================================
-   SHOOTING STARS
+   CONNECTION LINES
 ===================================================== */
 
-.shooting-star {
+.connection {
     position: absolute;
 
-    width: 140px;
-    height: 2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.95)
-        );
-
-    transform: rotate(-35deg);
-
-    opacity: 0;
-
-    animation: shootingStar 8s linear infinite;
-}
-
-.shooting-star.one {
-    top: 15%;
-    left: -10%;
-}
-
-.shooting-star.two {
-    top: 38%;
-    left: 45%;
-    animation-delay: 4s;
-}
-
-@keyframes shootingStar {
-
-    0% {
-        transform:
-            translate(0,0)
-            rotate(-35deg);
-
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    18% {
-        transform:
-            translate(600px,350px)
-            rotate(-35deg);
-
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-/* =====================================================
-   MAIN CONTENT
-===================================================== */
-
-.content {
-    position: relative;
-    z-index: 20;
-
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding:
-        30px
-        20px
-        145px;
-}
-
-/* Label */
-
-.label {
-    display: flex;
-    align-items: center;
-
-    gap: 20px;
-
-    color: #9eaccb;
-
-    font-size: 13px;
-
-    letter-spacing: 7px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 32px;
-}
-
-.label::before,
-.label::after {
-    content: "";
-
-    width: 45px;
     height: 1px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            #7895dc
-        );
-}
-
-.label::after {
-    background:
-        linear-gradient(
-            90deg,
-            #7895dc,
+            rgba(100,210,255,.35),
             transparent
         );
+
+    transform-origin: left center;
+
+    z-index: 2;
 }
 
-/* Heading */
+.connection.one {
+    width: 300px;
 
-h1 {
-    font-size: clamp(55px, 10vw, 125px);
+    left: 48%;
+    top: 48%;
 
-    line-height: .9;
-
-    letter-spacing: -5px;
-
-    font-weight: 700;
-
-    margin-bottom: 32px;
+    transform: rotate(12deg);
 }
 
-.white {
-    color: white;
+.connection.two {
+    width: 250px;
+
+    left: 47%;
+    top: 50%;
+
+    transform: rotate(155deg);
 }
 
-.gradient {
-    background:
-        linear-gradient(
-            90deg,
-            #65e6ff,
-            #668aff,
-            #955eff
-        );
+.connection.three {
+    width: 330px;
 
-    -webkit-background-clip: text;
-    background-clip: text;
+    left: 49%;
+    top: 52%;
 
-    color: transparent;
-}
-
-/* Description */
-
-.description {
-    color: #b0bad0;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 28px;
+    transform: rotate(-35deg);
 }
 
 /* =====================================================
-   COLLABORATION MESSAGE
+   TOP NAV
 ===================================================== */
 
-.interest {
-    color: #7f8da8;
+.nav {
+    position: absolute;
 
-    font-size: 13px;
+    left: 0;
+    right: 0;
+    top: 0;
 
-    letter-spacing: .5px;
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        0 55px;
+
+    border-bottom:
+        1px solid
+        rgba(180,160,255,.08);
+
+    z-index: 20;
+}
+
+.logo {
+    font-size: 18px;
+
+    letter-spacing: 5px;
+
+    font-weight: 600;
+}
+
+.logo span {
+    color: #8e6cff;
+}
+
+.network {
+    color: #596276;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+/* =====================================================
+   LEFT INFO
+===================================================== */
+
+.info {
+    position: absolute;
+
+    left: 7%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 280px;
+
+    z-index: 15;
+}
+
+.small-title {
+    color: #8e75ff;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
 
     margin-bottom: 18px;
 }
 
-.interest strong {
-    color: #c5d1e8;
+h1 {
+    font-size: 58px;
 
-    font-weight: 500;
+    line-height: .92;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 25px;
+}
+
+h1 span {
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px
+        rgba(170,145,255,.8);
+}
+
+.description {
+    color: #687185;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
 }
 
 /* CTA */
 
-.contact {
+.cta {
     display: inline-flex;
 
     align-items: center;
 
-    gap: 11px;
+    gap: 12px;
 
-    padding: 13px 28px;
+    color: #dcd5ff;
 
-    border-radius: 50px;
-
-    border: 1px solid rgba(150,180,255,.45);
+    border:
+        1px solid
+        rgba(150,120,255,.35);
 
     background:
-        rgba(10,20,50,.35);
+        rgba(80,50,160,.08);
 
-    color: #dce5ff;
+    padding:
+        12px 20px;
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 10px;
 
-    backdrop-filter: blur(10px);
+    letter-spacing: 2px;
 
-    transition: .3s ease;
+    text-transform: uppercase;
+
+    transition: .3s;
 }
 
-.contact:hover {
-    transform: translateY(-3px);
+.cta:hover {
+    border-color: #9c80ff;
 
-    border-color: #91b0ff;
+    background:
+        rgba(100,70,220,.13);
 
     box-shadow:
-        0 0 30px rgba(70,130,255,.3);
+        0 0 25px
+        rgba(130,90,255,.15);
 }
 
 /* =====================================================
-   EARTH HORIZON
+   RIGHT DATA PANEL
 ===================================================== */
 
-.earth {
+.data-panel {
     position: absolute;
 
-    z-index: 10;
+    right: 7%;
+    top: 30%;
 
-    width: 155%;
-    height: 430px;
+    width: 220px;
 
-    left: -27.5%;
-    bottom: -350px;
+    z-index: 15;
+}
 
-    border-radius: 50%;
+.panel-heading {
+    color: #61dfff;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.metric {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding:
+        9px 0;
+
+    border-bottom:
+        1px solid
+        rgba(130,150,180,.07);
+
+    font-size: 9px;
+}
+
+.metric .label {
+    color: #4d5c69;
+}
+
+.metric .value {
+    color: #a4afc4;
+}
+
+.signal {
+    margin-top: 18px;
+
+    height: 3px;
+
+    width: 100%;
 
     background:
-        radial-gradient(
-            ellipse at 50% 0%,
-            rgba(60,120,210,.6),
-            rgba(15,35,85,.55) 30%,
-            #01030a 70%
+        rgba(100,120,160,.08);
+
+    overflow: hidden;
+}
+
+.signal::after {
+    content: "";
+
+    display: block;
+
+    width: 62%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6751ff,
+            #57dfff
         );
 
-    border-top:
-        2px solid
-        rgba(120,190,255,.9);
-
     box-shadow:
-        0 -8px 30px rgba(70,150,255,.75),
-        0 -20px 80px rgba(50,100,255,.25);
+        0 0 10px #57dfff;
 }
 
-.earth::before {
-    content: "";
+/* =====================================================
+   BOTTOM
+===================================================== */
 
+.bottom {
     position: absolute;
 
-    width: 400px;
-    height: 80px;
+    bottom: 24px;
 
-    left: 50%;
-    top: -30px;
+    left: 55px;
+    right: 55px;
 
-    transform: translateX(-50%);
+    display: flex;
 
-    background:
-        rgba(100,190,255,.8);
+    justify-content: space-between;
 
-    filter: blur(35px);
+    color: #3f4756;
 
-    border-radius: 50%;
-}
+    font-size: 8px;
 
-.earth::after {
-    content: "";
+    letter-spacing: 3px;
 
-    position: absolute;
-
-    width: 8px;
-    height: 8px;
-
-    left: 50%;
-    top: -5px;
-
-    transform: translateX(-50%);
-
-    background: white;
-
-    border-radius: 50%;
-
-    box-shadow:
-        0 0 15px 5px white,
-        0 0 40px 15px rgba(80,160,255,.8);
+    z-index: 20;
 }
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-    .sun {
-        width: 70px;
-        height: 70px;
-
-        right: 7%;
-        top: 9%;
+    .nav {
+        padding:
+            0 20px;
     }
 
-    .planet-small {
-        width: 55px;
-        height: 55px;
-
-        left: 6%;
-        top: 19%;
-    }
-
-    .planet-small::after {
-        width: 85px;
-        height: 25px;
-
-        left: -15px;
-        top: 15px;
-    }
-
-    .satellite {
-        right: 5%;
-        top: 30%;
-
-        transform: scale(.7);
-    }
-
-    .orbit {
-        width: 320px;
-        height: 110px;
-    }
-
-    .label {
-        font-size: 10px;
+    .logo {
+        font-size: 14px;
         letter-spacing: 4px;
-        gap: 10px;
     }
 
-    .label::before,
-    .label::after {
-        width: 22px;
+    .network {
+        font-size: 7px;
+    }
+
+    .info {
+        left: 25px;
+        top: 28%;
+
+        width: 240px;
+
+        transform: none;
     }
 
     h1 {
-        font-size: 62px;
-        letter-spacing: -3px;
+        font-size: 50px;
     }
 
     .description {
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-    .interest {
         font-size: 12px;
     }
 
-    .contact {
-        padding: 12px 23px;
+    .hub {
+        top: 62%;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.72);
     }
 
-    .earth {
-        width: 190%;
-        left: -45%;
-        bottom: -285px;
+    .data-panel {
+        display: none;
+    }
+
+    .connection {
+        display: none;
+    }
+
+    .bottom {
+        left: 20px;
+        right: 20px;
+    }
+
+    .bottom span:first-child {
+        display: none;
     }
 }
 </style>
@@ -783,74 +698,118 @@ h1 {
 
 <div class="space">
 
-    <!-- Background -->
+    <!-- Stars -->
     <div class="stars"></div>
-    <div class="stars2"></div>
-    <div class="stars3"></div>
 
-    <!-- Nebula -->
-    <div class="nebula"></div>
+    <!-- Ambient glow -->
+    <div class="glow"></div>
 
-    <!-- Sun -->
-    <div class="sun"></div>
+    <!-- Navigation -->
+    <nav class="nav">
 
-    <!-- Planet -->
-    <div class="planet-small"></div>
+        <div class="logo">
+            ORBIT<span>HUB</span>
+        </div>
 
-    <!-- Satellite -->
-    <div class="satellite">
-        <div class="panel left"></div>
-        <div class="satellite-body"></div>
-        <div class="panel right"></div>
+        <div class="network">
+            Network initializing
+        </div>
+
+    </nav>
+
+    <!-- Connection lines -->
+    <div class="connection one"></div>
+    <div class="connection two"></div>
+    <div class="connection three"></div>
+
+    <!-- Orbital Hub -->
+    <div class="hub">
+
+        <div class="ring one"></div>
+        <div class="ring two"></div>
+        <div class="ring three"></div>
+
+        <div class="core"></div>
+
+        <div class="node one"></div>
+        <div class="node two"></div>
+        <div class="node three"></div>
+
     </div>
 
-    <!-- Orbit -->
-    <div class="orbit">
-        <div class="orbit-dot"></div>
-    </div>
+    <!-- Left information -->
+    <section class="info">
 
-    <!-- Shooting stars -->
-    <div class="shooting-star one"></div>
-    <div class="shooting-star two"></div>
-
-    <!-- Main content -->
-    <main class="content">
-
-        <div class="label">
-            <span></span>
-            Something New
-            <span></span>
+        <div class="small-title">
+            New Destination
         </div>
 
         <h1>
-            <span class="white">COMING</span>
-            <span class="gradient">SOON</span>
+            ORBIT<br>
+            <span>HUB</span>
         </h1>
 
         <p class="description">
-            We're working on something exciting.<br>
-            Something new is taking shape.<br>
-            Stay tuned for the journey.
-        </p>
-
-        <p class="interest">
-            <strong>Have an idea for this space?</strong>
-            Let's create something remarkable together.
+            A new digital destination is forming.
+            The hub is getting ready to connect
+            ideas, technology and possibilities.
         </p>
 
         <a
-            class="contact"
-            href="mailto:enquries@novvan.us?subject=Interested in this opportunity"
+            class="cta"
+            href="mailto:traju.r99@gmail.com?subject=ORBIT%20HUB%20Collaboration"
         >
             ✦ &nbsp; Let's collaborate
         </a>
 
-    </main>
+    </section>
 
-    <!-- Earth horizon -->
-    <div class="earth"></div>
+    <!-- Data -->
+    <section class="data-panel">
+
+        <div class="panel-heading">
+            ORBITAL NETWORK
+        </div>
+
+        <div class="metric">
+            <span class="label">STATUS</span>
+            <span class="value">BUILDING</span>
+        </div>
+
+        <div class="metric">
+            <span class="label">NODES</span>
+            <span class="value">ONLINE</span>
+        </div>
+
+        <div class="metric">
+            <span class="label">SIGNAL</span>
+            <span class="value">STRONG</span>
+        </div>
+
+        <div class="metric">
+            <span class="label">SECTOR</span>
+            <span class="value">ORBITAL</span>
+        </div>
+
+        <div class="signal"></div>
+
+    </section>
+
+    <!-- Bottom -->
+    <div class="bottom">
+
+        <span>
+            ORBITAL NETWORK // 001
+        </span>
+
+        <span>
+            SOMETHING NEW IS FORMING
+        </span>
+
+    </div>
 
 </div>
 
 </body>
 </html>
+```
