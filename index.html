@@ -1,11 +1,10 @@
-```html id="6x7nqv"
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ORBIT HUB — Coming Soon</title>
+<title>ORBITHUB.IN — A Space for Ideas</title>
 
 <style>
 * {
@@ -22,11 +21,6 @@ body {
 
 body {
     overflow: hidden;
-
-    background: #02020a;
-
-    color: #fff;
-
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -34,33 +28,45 @@ body {
         Roboto,
         Arial,
         sans-serif;
+
+    color: white;
+    background: #04010c;
 }
 
-/* =====================================================
-   BACKGROUND
-===================================================== */
+/* =========================================
+   UNIVERSE
+========================================= */
 
-.space {
-    position: fixed;
-    inset: 0;
+.universe {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
 
     overflow: hidden;
 
     background:
         radial-gradient(
             circle at 50% 50%,
-            rgba(115,65,255,.12),
-            transparent 28%
+            rgba(100, 0, 255, .11),
+            transparent 30%
         ),
         radial-gradient(
             circle at 20% 20%,
-            rgba(0,180,255,.08),
+            rgba(40, 0, 130, .12),
             transparent 30%
         ),
-        #02020a;
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(100, 0, 180, .08),
+            transparent 30%
+        ),
+        #04010c;
 }
 
-/* Stars */
+/* =========================================
+   STARS
+========================================= */
 
 .stars {
     position: absolute;
@@ -69,133 +75,284 @@ body {
     background-image:
         radial-gradient(
             circle,
-            rgba(255,255,255,.9) 1px,
+            rgba(255,255,255,.85) 1px,
             transparent 1.5px
         ),
         radial-gradient(
             circle,
-            rgba(130,180,255,.7) 1px,
+            rgba(150,130,255,.6) 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.4) 1px,
             transparent 1.5px
         );
 
     background-size:
-        160px 160px,
-        300px 300px;
+        180px 180px,
+        290px 290px,
+        420px 420px;
 
     background-position:
-        20px 20px,
-        100px 70px;
+        20px 30px,
+        80px 110px,
+        150px 60px;
 
     opacity: .55;
 }
 
-/* =====================================================
+/* =========================================
    AMBIENT GLOW
-===================================================== */
+========================================= */
 
-.glow {
+.ambient {
     position: absolute;
 
-    width: 650px;
-    height: 650px;
+    width: 700px;
+    height: 700px;
 
     left: 50%;
     top: 50%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(100,70,255,.12),
-            transparent 68%
+            rgba(130,30,255,.14),
+            rgba(80,0,180,.05) 45%,
+            transparent 70%
         );
 
-    filter: blur(25px);
+    filter: blur(30px);
+
+    animation:
+        ambientPulse 6s ease-in-out infinite;
 }
 
-/* =====================================================
-   ORBITAL HUB
-===================================================== */
+@keyframes ambientPulse {
 
-.hub {
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.12);
+    }
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
     position: absolute;
 
-    width: 230px;
-    height: 230px;
-
+    top: 38px;
     left: 50%;
-    top: 48%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translateX(-50%);
 
-    z-index: 5;
+    z-index: 20;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    letter-spacing: 8px;
+
+    white-space: nowrap;
+
+    color: #fff;
 }
 
-/* Central sphere */
+.brand span {
+    color: #a84cff;
+}
 
-.core {
+.brand-line {
     position: absolute;
 
-    width: 95px;
-    height: 95px;
+    top: 72px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 45px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #a64dff,
+            transparent
+        );
+}
+
+/* =========================================
+   ORBITAL SYSTEM
+========================================= */
+
+.orbit-system {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
 
     left: 50%;
     top: 50%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 5;
+}
+
+/* =========================================
+   CORE
+========================================= */
+
+.core {
+    position: absolute;
+
+    width: 125px;
+    height: 125px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
-            circle at 32% 27%,
-            #fff,
-            #c4a9ff 12%,
-            #805cff 38%,
-            #3a188f 70%,
-            #10052e 100%
+            circle at 32% 25%,
+            #fff 0%,
+            #e5c8ff 10%,
+            #bd55ff 28%,
+            #8900ff 50%,
+            #43008a 72%,
+            #17002f 100%
         );
 
     box-shadow:
-        0 0 25px rgba(140,100,255,.8),
-        0 0 80px rgba(100,60,255,.35),
-        inset -15px -15px 25px rgba(0,0,0,.45);
+        0 0 25px rgba(170,70,255,.9),
+        0 0 65px rgba(130,30,255,.55),
+        0 0 130px rgba(100,0,255,.25),
+
+        inset -18px -20px 35px
+        rgba(0,0,0,.5);
+
+    animation:
+        coreFloat 5s ease-in-out infinite;
 }
 
-/* Core pulse */
+@keyframes coreFloat {
 
-.core::after {
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.04);
+    }
+}
+
+.core::before {
     content: "";
 
     position: absolute;
 
-    inset: -15px;
+    width: 42px;
+    height: 42px;
+
+    left: 25px;
+    top: 19px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.95),
+            rgba(255,255,255,.2),
+            transparent
+        );
+
+    filter: blur(4px);
+}
+
+/* =========================================
+   PULSE
+========================================= */
+
+.pulse {
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
 
     border:
         1px solid
-        rgba(170,140,255,.3);
+        rgba(170,90,255,.22);
 
     border-radius: 50%;
 
     animation:
-        corePulse 3s ease-in-out infinite;
+        pulse 4s ease-out infinite;
 }
 
-@keyframes corePulse {
+.pulse.two {
+    animation-delay: 1.3s;
+}
 
-    50% {
-        inset: -25px;
+.pulse.three {
+    animation-delay: 2.6s;
+}
 
-        opacity: .3;
+@keyframes pulse {
+
+    0% {
+        width: 140px;
+        height: 140px;
+        opacity: .6;
+    }
+
+    100% {
+        width: 330px;
+        height: 330px;
+        opacity: 0;
     }
 }
 
-/* =====================================================
-   ORBITS
-===================================================== */
+/* =========================================
+   ORBIT RINGS
+========================================= */
 
 .ring {
     position: absolute;
@@ -204,41 +361,46 @@ body {
     top: 50%;
 
     transform:
-        translate(-50%, -50%)
-        rotate(25deg);
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
     border:
         1px solid
-        rgba(150,120,255,.22);
+        rgba(145,90,255,.22);
+
+    pointer-events: none;
 }
 
 .ring.one {
-    width: 250px;
+    width: 270px;
     height: 105px;
-
-    animation:
-        rotateOne 12s linear infinite;
-}
-
-.ring.two {
-    width: 310px;
-    height: 135px;
 
     transform:
         translate(-50%, -50%)
-        rotate(-35deg);
-
-    border-color:
-        rgba(60,200,255,.14);
+        rotate(20deg);
 
     animation:
-        rotateTwo 17s linear infinite;
+        ringOne 14s linear infinite;
+}
+
+.ring.two {
+    width: 340px;
+    height: 130px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-32deg);
+
+    border-color:
+        rgba(60,190,255,.18);
+
+    animation:
+        ringTwo 18s linear infinite;
 }
 
 .ring.three {
-    width: 390px;
+    width: 430px;
     height: 165px;
 
     transform:
@@ -246,32 +408,44 @@ body {
         rotate(65deg);
 
     border-color:
-        rgba(180,100,255,.1);
+        rgba(180,70,255,.14);
 
     animation:
-        rotateThree 23s linear infinite;
+        ringThree 23s linear infinite;
 }
 
-@keyframes rotateOne {
+.ring.four {
+    width: 490px;
+    height: 195px;
 
+    transform:
+        translate(-50%, -50%)
+        rotate(-12deg);
+
+    border-color:
+        rgba(90,110,255,.08);
+
+    animation:
+        ringFour 28s linear infinite;
+}
+
+@keyframes ringOne {
     to {
         transform:
             translate(-50%, -50%)
-            rotate(385deg);
+            rotate(380deg);
     }
 }
 
-@keyframes rotateTwo {
-
+@keyframes ringTwo {
     to {
         transform:
             translate(-50%, -50%)
-            rotate(325deg);
+            rotate(328deg);
     }
 }
 
-@keyframes rotateThree {
-
+@keyframes ringThree {
     to {
         transform:
             translate(-50%, -50%)
@@ -279,43 +453,49 @@ body {
     }
 }
 
-/* =====================================================
-   ORBITING NODES
-===================================================== */
+@keyframes ringFour {
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(348deg);
+    }
+}
 
-.node {
+/* =========================================
+   PARTICLES
+========================================= */
+
+.particle {
     position: absolute;
-
-    width: 9px;
-    height: 9px;
 
     border-radius: 50%;
 
-    background: #67eaff;
+    z-index: 10;
+}
+
+.cyan {
+    width: 9px;
+    height: 9px;
+
+    background: #65eaff;
 
     box-shadow:
-        0 0 15px #67eaff;
+        0 0 12px #65eaff,
+        0 0 25px rgba(65,220,255,.6);
 }
 
-.node.one {
-    left: 13px;
-    top: 78px;
-}
+.purple {
+    width: 9px;
+    height: 9px;
 
-.node.two {
-    right: 8px;
-    top: 115px;
-
-    background: #ae7aff;
+    background: #c15cff;
 
     box-shadow:
-        0 0 15px #ae7aff;
+        0 0 12px #c15cff,
+        0 0 25px rgba(180,70,255,.6);
 }
 
-.node.three {
-    left: 70px;
-    bottom: 0;
-
+.white {
     width: 6px;
     height: 6px;
 
@@ -325,182 +505,176 @@ body {
         0 0 12px #fff;
 }
 
-/* =====================================================
-   CONNECTION LINES
-===================================================== */
+.p1 {
+    left: 47px;
+    top: 190px;
 
-.connection {
+    animation:
+        floatOne 7s ease-in-out infinite;
+}
+
+.p2 {
+    right: 35px;
+    top: 225px;
+
+    animation:
+        floatTwo 9s ease-in-out infinite;
+}
+
+.p3 {
+    left: 120px;
+    bottom: 50px;
+
+    animation:
+        floatThree 8s ease-in-out infinite;
+}
+
+.p4 {
+    right: 115px;
+    top: 80px;
+
+    animation:
+        floatFour 11s ease-in-out infinite;
+}
+
+@keyframes floatOne {
+    50% {
+        transform:
+            translate(35px, -25px);
+    }
+}
+
+@keyframes floatTwo {
+    50% {
+        transform:
+            translate(-30px, 35px);
+    }
+}
+
+@keyframes floatThree {
+    50% {
+        transform:
+            translate(20px, -30px);
+    }
+}
+
+@keyframes floatFour {
+    50% {
+        transform:
+            translate(-25px, 30px);
+    }
+}
+
+/* =========================================
+   LEFT MESSAGE
+========================================= */
+
+.message {
     position: absolute;
 
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(100,210,255,.35),
-            transparent
-        );
-
-    transform-origin: left center;
-
-    z-index: 2;
-}
-
-.connection.one {
-    width: 300px;
-
-    left: 48%;
-    top: 48%;
-
-    transform: rotate(12deg);
-}
-
-.connection.two {
-    width: 250px;
-
-    left: 47%;
+    left: 55px;
     top: 50%;
 
-    transform: rotate(155deg);
-}
+    transform:
+        translateY(-50%);
 
-.connection.three {
-    width: 330px;
-
-    left: 49%;
-    top: 52%;
-
-    transform: rotate(-35deg);
-}
-
-/* =====================================================
-   TOP NAV
-===================================================== */
-
-.nav {
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    top: 0;
-
-    height: 80px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    padding:
-        0 55px;
-
-    border-bottom:
-        1px solid
-        rgba(180,160,255,.08);
+    width: 230px;
 
     z-index: 20;
 }
 
-.logo {
-    font-size: 18px;
-
-    letter-spacing: 5px;
-
-    font-weight: 600;
-}
-
-.logo span {
-    color: #8e6cff;
-}
-
-.network {
-    color: #596276;
+.message-label {
+    color: #995cff;
 
     font-size: 9px;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-}
-
-/* =====================================================
-   LEFT INFO
-===================================================== */
-
-.info {
-    position: absolute;
-
-    left: 7%;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 280px;
-
-    z-index: 15;
-}
-
-.small-title {
-    color: #8e75ff;
-
-    font-size: 10px;
 
     letter-spacing: 4px;
 
     text-transform: uppercase;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
 
-h1 {
-    font-size: 58px;
+.message h2 {
+    color: #e9e3f7;
 
-    line-height: .92;
+    font-size: 25px;
 
-    letter-spacing: -4px;
+    line-height: 1.25;
 
-    margin-bottom: 25px;
+    font-weight: 400;
+
+    margin-bottom: 14px;
 }
 
-h1 span {
-    color: transparent;
+.message p {
+    color: #646177;
 
-    -webkit-text-stroke:
-        1px
-        rgba(170,145,255,.8);
+    font-size: 11px;
+
+    line-height: 1.8;
 }
 
-.description {
-    color: #687185;
+/* =========================================
+   RIGHT CTA
+========================================= */
 
-    font-size: 13px;
+.cta-area {
+    position: absolute;
+
+    right: 55px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: 220px;
+
+    z-index: 20;
+
+    text-align: right;
+}
+
+.cta-label {
+    color: #747087;
+
+    font-size: 10px;
 
     line-height: 1.8;
 
-    margin-bottom: 25px;
+    margin-bottom: 16px;
 }
 
-/* CTA */
+.cta-label strong {
+    display: block;
 
-.cta {
+    color: #d7d0e7;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    margin-bottom: 4px;
+}
+
+.contact {
     display: inline-flex;
 
     align-items: center;
 
-    gap: 12px;
+    gap: 9px;
 
-    color: #dcd5ff;
+    padding:
+        11px
+        18px;
 
     border:
         1px solid
-        rgba(150,120,255,.35);
+        rgba(160,100,255,.35);
 
-    background:
-        rgba(80,50,160,.08);
+    border-radius: 30px;
 
-    padding:
-        12px 20px;
+    color: #ded4ff;
 
     text-decoration: none;
 
@@ -510,108 +684,41 @@ h1 span {
 
     text-transform: uppercase;
 
-    transition: .3s;
+    background:
+        rgba(90,30,160,.08);
+
+    transition: .3s ease;
 }
 
-.cta:hover {
-    border-color: #9c80ff;
+.contact:hover {
+    border-color:
+        rgba(190,140,255,.8);
 
     background:
-        rgba(100,70,220,.13);
+        rgba(100,40,180,.15);
 
     box-shadow:
         0 0 25px
-        rgba(130,90,255,.15);
+        rgba(150,70,255,.2);
+
+    transform:
+        translateY(-2px);
 }
 
-/* =====================================================
-   RIGHT DATA PANEL
-===================================================== */
+.contact span {
+    color: #b65cff;
 
-.data-panel {
-    position: absolute;
-
-    right: 7%;
-    top: 30%;
-
-    width: 220px;
-
-    z-index: 15;
+    font-size: 14px;
 }
 
-.panel-heading {
-    color: #61dfff;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 15px;
-}
-
-.metric {
-    display: flex;
-
-    justify-content: space-between;
-
-    padding:
-        9px 0;
-
-    border-bottom:
-        1px solid
-        rgba(130,150,180,.07);
-
-    font-size: 9px;
-}
-
-.metric .label {
-    color: #4d5c69;
-}
-
-.metric .value {
-    color: #a4afc4;
-}
-
-.signal {
-    margin-top: 18px;
-
-    height: 3px;
-
-    width: 100%;
-
-    background:
-        rgba(100,120,160,.08);
-
-    overflow: hidden;
-}
-
-.signal::after {
-    content: "";
-
-    display: block;
-
-    width: 62%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #6751ff,
-            #57dfff
-        );
-
-    box-shadow:
-        0 0 10px #57dfff;
-}
-
-/* =====================================================
+/* =========================================
    BOTTOM
-===================================================== */
+========================================= */
 
 .bottom {
     position: absolute;
 
-    bottom: 24px;
+    bottom: 25px;
 
     left: 55px;
     right: 55px;
@@ -620,66 +727,79 @@ h1 span {
 
     justify-content: space-between;
 
-    color: #3f4756;
+    color: #3e3a4c;
 
     font-size: 8px;
 
     letter-spacing: 3px;
 
+    text-transform: uppercase;
+
     z-index: 20;
 }
 
-/* =====================================================
+/* =========================================
    MOBILE
-===================================================== */
+========================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 
-    .nav {
-        padding:
-            0 20px;
+    .brand {
+        top: 25px;
+
+        font-size: 16px;
+
+        letter-spacing: 6px;
     }
 
-    .logo {
-        font-size: 14px;
-        letter-spacing: 4px;
+    .brand-line {
+        top: 52px;
     }
 
-    .network {
-        font-size: 7px;
-    }
-
-    .info {
-        left: 25px;
-        top: 28%;
-
-        width: 240px;
+    .message {
+        left: 20px;
+        top: 18%;
 
         transform: none;
+
+        width: 155px;
     }
 
-    h1 {
-        font-size: 50px;
+    .message-label {
+        font-size: 7px;
+
+        letter-spacing: 3px;
     }
 
-    .description {
-        font-size: 12px;
+    .message h2 {
+        font-size: 17px;
     }
 
-    .hub {
-        top: 62%;
+    .message p {
+        display: none;
+    }
 
+    .cta-area {
+        right: 20px;
+        top: 18%;
+
+        transform: none;
+
+        width: 160px;
+    }
+
+    .cta-label {
+        font-size: 9px;
+    }
+
+    .cta-label strong {
+        font-size: 11px;
+    }
+
+    .orbit-system {
         transform:
             translate(-50%, -50%)
-            scale(.72);
-    }
-
-    .data-panel {
-        display: none;
-    }
-
-    .connection {
-        display: none;
+            scale(.68);
     }
 
     .bottom {
@@ -691,119 +811,127 @@ h1 span {
         display: none;
     }
 }
+
+@media (max-width: 500px) {
+
+    .message {
+        top: 16%;
+    }
+
+    .cta-area {
+        top: 16%;
+    }
+
+    .orbit-system {
+        top: 54%;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.56);
+    }
+
+    .bottom {
+        bottom: 15px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<div class="space">
+<div class="universe">
 
     <!-- Stars -->
     <div class="stars"></div>
 
     <!-- Ambient glow -->
-    <div class="glow"></div>
+    <div class="ambient"></div>
 
-    <!-- Navigation -->
-    <nav class="nav">
-
-        <div class="logo">
-            ORBIT<span>HUB</span>
-        </div>
-
-        <div class="network">
-            Network initializing
-        </div>
-
-    </nav>
-
-    <!-- Connection lines -->
-    <div class="connection one"></div>
-    <div class="connection two"></div>
-    <div class="connection three"></div>
-
-    <!-- Orbital Hub -->
-    <div class="hub">
-
-        <div class="ring one"></div>
-        <div class="ring two"></div>
-        <div class="ring three"></div>
-
-        <div class="core"></div>
-
-        <div class="node one"></div>
-        <div class="node two"></div>
-        <div class="node three"></div>
-
+    <!-- Brand -->
+    <div class="brand">
+        ORBIT<span>HUB</span>
     </div>
 
-    <!-- Left information -->
-    <section class="info">
+    <div class="brand-line"></div>
 
-        <div class="small-title">
-            New Destination
+    <!-- Left message -->
+    <section class="message">
+
+        <div class="message-label">
+            A Space Awaits
         </div>
 
-        <h1>
-            ORBIT<br>
-            <span>HUB</span>
-        </h1>
+        <h2>
+            A space is waiting
+            for the right idea.
+        </h2>
 
-        <p class="description">
-            A new digital destination is forming.
-            The hub is getting ready to connect
-            ideas, technology and possibilities.
+        <p>
+            Every great destination
+            starts with a vision.
+            Perhaps this one is yours.
         </p>
 
+    </section>
+
+    <!-- Right CTA -->
+    <section class="cta-area">
+
+        <div class="cta-label">
+
+            <strong>
+                Could this be your next destination?
+            </strong>
+
+            If something here sparks
+            an idea, let's talk.
+
+        </div>
+
         <a
-            class="cta"
-            href="mailto:traju.r99@gmail.co?subject=ORBIT%20HUB%20Collaboration"
+            class="contact"
+            href="mailto:traju.r99@gmail.com?subject=Exploring%20Orbit%20Hub"
         >
-            ✦ &nbsp; Let's collaborate
+            <span>✦</span>
+            Start a Conversation
         </a>
 
     </section>
 
-    <!-- Data -->
-    <section class="data-panel">
+    <!-- Orbital system -->
+    <div class="orbit-system">
 
-        <div class="panel-heading">
-            ORBITAL NETWORK
-        </div>
+        <!-- Orbit rings -->
+        <div class="ring one"></div>
+        <div class="ring two"></div>
+        <div class="ring three"></div>
+        <div class="ring four"></div>
 
-        <div class="metric">
-            <span class="label">STATUS</span>
-            <span class="value">BUILDING</span>
-        </div>
+        <!-- Pulse -->
+        <div class="pulse"></div>
+        <div class="pulse two"></div>
+        <div class="pulse three"></div>
 
-        <div class="metric">
-            <span class="label">NODES</span>
-            <span class="value">ONLINE</span>
-        </div>
+        <!-- Particles -->
+        <div class="particle cyan p1"></div>
+        <div class="particle purple p2"></div>
+        <div class="particle white p3"></div>
+        <div class="particle cyan p4"></div>
 
-        <div class="metric">
-            <span class="label">SIGNAL</span>
-            <span class="value">STRONG</span>
-        </div>
+        <!-- Central energy -->
+        <div class="core"></div>
 
-        <div class="metric">
-            <span class="label">SECTOR</span>
-            <span class="value">ORBITAL</span>
-        </div>
-
-        <div class="signal"></div>
-
-    </section>
+    </div>
 
     <!-- Bottom -->
     <div class="bottom">
 
         <span>
-            ORBITAL NETWORK // 001
+            ORBITAL SYSTEM // 001
         </span>
 
         <span>
-            SOMETHING NEW IS FORMING
+            FIND YOUR ORBIT
         </span>
 
     </div>
@@ -812,4 +940,3 @@ h1 span {
 
 </body>
 </html>
-```
